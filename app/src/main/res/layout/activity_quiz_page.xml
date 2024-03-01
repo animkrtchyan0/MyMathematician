@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".QuizArithm1"
+    android:background="@color/dark_piruz"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="question"
+        android:textSize="20dp"
+        android:background="@drawable/quiz_shape"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/answer1Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="answer1"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:backgroundTint="@color/trans_white"
+        android:layout_marginTop="30dp"/>
+    <Button
+        android:id="@+id/answer2Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="answer1"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:backgroundTint="@color/trans_white"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/answer3Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="answer1"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:backgroundTint="@color/trans_white"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/answer4Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="answer1"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:backgroundTint="@color/trans_white"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="@color/dark_blue"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Notes:"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="40dp"/>
+
+
+</LinearLayout>

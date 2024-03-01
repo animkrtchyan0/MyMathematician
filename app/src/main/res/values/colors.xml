@@ -4,7 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="trans_white">#80FFFFFF</color>
     <color name="main_piruz">#DBEFEC</color>
-    <color name="dark_piruz">#78A69E</color>
+    <color name="dark_piruz">#5196B1</color>
     <color name="grey">#EDEDED</color>
     <color name="dark_blue">#0F3360</color>
+    <color name="bar_blue">#245B9F</color>
 </resources>

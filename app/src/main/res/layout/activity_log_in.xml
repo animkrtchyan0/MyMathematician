@@ -72,6 +72,8 @@
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
+
+
             <Button
                 android:id="@+id/log_in_button"
                 android:layout_width="410dp"
