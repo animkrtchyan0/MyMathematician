@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomePage homePage = new HomePage();
     ProfilePage profilePage = new ProfilePage();
-    AiPage favoritePage = new AiPage();
+    AiPage aiPage = new AiPage();
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,homePage).commit();
                 }else if (item.getItemId()== R.id.profile_bottom){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,profilePage).commit();
-                }else if (item.getItemId()== R.id.favorite_bottom){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container,favoritePage).commit();
+                }else if (item.getItemId()== R.id.letter_bottom){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,aiPage).commit();
                 }
 
                 return false;

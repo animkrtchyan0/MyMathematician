@@ -7,8 +7,8 @@
         android:id="@+id/home_bottom"/>
     <item
         android:title=""
-        android:icon="@drawable/baseline_favorite_24"
-        android:id="@+id/favorite_bottom"/>
+        android:icon="@drawable/baseline_local_post_office_24"
+        android:id="@+id/letter_bottom"/>
 
     <item
         android:title=""
