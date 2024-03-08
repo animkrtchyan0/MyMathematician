@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class LevelPageFunc extends AppCompatActivity {
-    LinearLayout level1,level2;
+    private LinearLayout level1,level2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

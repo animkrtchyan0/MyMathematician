@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 public class LevelPageArithm extends AppCompatActivity {
 
-    LinearLayout level1,level2;
+    private LinearLayout level1,level2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

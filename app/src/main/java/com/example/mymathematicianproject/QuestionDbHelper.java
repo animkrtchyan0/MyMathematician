@@ -18,8 +18,17 @@ public class QuestionDbHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE questionsArithm1 (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "question TEXT, answer1 TEXT, answer2 TEXT, answer3 TEXT, answer4 TEXT, " +
                 "correct_answer INTEGER);");
-        db.execSQL("INSERT INTO questionsArithm1 (question, answer1, answer2, answer3, answer4, correct_answer) " +
-                "VALUES ('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);");
+        db.execSQL("INSERT INTO questionsArithm1 (question, answer1, answer2, answer3, answer4, correct_answer) VALUES" +
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);"+
+                "('What is the capital of France?', 'Rome', 'Paris', 'Madrid', 'Berlin', 2);");
 
         db.execSQL("CREATE TABLE questionsArithm2 (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "question TEXT, answer1 TEXT, answer2 TEXT, answer3 TEXT, answer4 TEXT, " +
