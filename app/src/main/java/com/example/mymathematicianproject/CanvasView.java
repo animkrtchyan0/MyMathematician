@@ -40,7 +40,7 @@ public class CanvasView extends View {
                 startY = y;
                 break;
             case MotionEvent.ACTION_MOVE:
-                drawLine(startX, startY, x, y, );
+                drawLine(startX, startY, x, y);
                 startX = x;
                 startY = y;
                 break;
