@@ -16,7 +16,6 @@
         android:background="@color/dark_blue"
         app:menu="@menu/prof_more_details">
 
-        <!-- TODO: Update blank fragment layout -->
 
 
 

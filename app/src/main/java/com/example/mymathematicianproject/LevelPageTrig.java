@@ -8,29 +8,31 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class LevelPageTrig extends AppCompatActivity {
-    private LinearLayout level1,level2;
+
+    LinearLayout level1;
+    LinearLayout level2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_page_trig);
+
         level1 = findViewById(R.id.level1);
         level2 = findViewById(R.id.level2);
 
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LevelPageTrig.this,QuizTrig1.class);
+                Intent intent = new Intent(LevelPageTrig.this,QuizArithm1.class);
                 startActivity(intent);
-                finish();
             }
         });
+
         level2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LevelPageTrig.this,QuizTrig2.class);
+                Intent intent = new Intent(LevelPageTrig.this,QuizArithm2.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

@@ -27,7 +27,7 @@ public class QuizLog1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_page);
+        setContentView(R.layout.quiz_log1);
 
         questionTextView = findViewById(R.id.questionTextView);
         answer1Button = findViewById(R.id.answer1Button);

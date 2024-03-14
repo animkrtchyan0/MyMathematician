@@ -11,30 +11,31 @@ import android.widget.LinearLayout;
 
 public class LevelPageArithm extends AppCompatActivity {
 
-    private LinearLayout level1,level2;
+    LinearLayout level1;
+    LinearLayout level2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_page_arithm);
 
-        level1 = findViewById(R.id.level1);
-        level2 = findViewById(R.id.level2);
+       level1 = findViewById(R.id.level1);
+       level2 = findViewById(R.id.level2);
 
-        level1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LevelPageArithm.this,QuizArithm1.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        level2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LevelPageArithm.this,QuizArithm2.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+       level1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(LevelPageArithm.this,QuizArithm1.class);
+               startActivity(intent);
+           }
+       });
+
+       level2.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(LevelPageArithm.this,QuizArithm2.class);
+               startActivity(intent);
+           }
+       });
     }
 }

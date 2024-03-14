@@ -91,14 +91,6 @@ public class HomePage extends Fragment {
             }
         });
 
-        LinearLayout layout8 = view.findViewById(R.id.category8);
-        layout8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageComplex.class);
-                startActivity(intent);
-            }
-        });
         return view;
     }
 }

@@ -25,10 +25,13 @@ public class QuizArithm1 extends AppCompatActivity {
     private List<Question> questionList;
     private int currentQuestionIndex = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_page);
+        setContentView(R.layout.quiz_arithm1);
+
+        CanvasView canvasView = findViewById(R.id.canvas_view);
 
         questionTextView = findViewById(R.id.questionTextView);
         answer1Button = findViewById(R.id.answer1Button);
