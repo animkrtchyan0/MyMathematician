@@ -32,7 +32,7 @@ public class HomePage extends Fragment {
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageVar.class);
+                Intent intent = new Intent(getActivity(), PageVar.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class HomePage extends Fragment {
         layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageFunc.class);
+                Intent intent = new Intent(getActivity(), PageFunc.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +50,7 @@ public class HomePage extends Fragment {
         layout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageTrig.class);
+                Intent intent = new Intent(getActivity(), PageTrig.class);
                 startActivity(intent);
             }
         });
@@ -59,16 +59,17 @@ public class HomePage extends Fragment {
         layout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageArithm.class);
+                Intent intent = new Intent(getActivity(), PageGeom.class);
                 startActivity(intent);
             }
         });
+
 
         LinearLayout layout5 = view.findViewById(R.id.category5);
         layout5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageReal.class);
+                Intent intent = new Intent(getActivity(), PageLog.class);
                 startActivity(intent);
             }
         });
@@ -77,16 +78,7 @@ public class HomePage extends Fragment {
         layout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageLog.class);
-                startActivity(intent);
-            }
-        });
-
-        LinearLayout layout7 = view.findViewById(R.id.category7);
-        layout7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LevelPageDeriv.class);
+                Intent intent = new Intent(getActivity(), PageDeriv.class);
                 startActivity(intent);
             }
         });

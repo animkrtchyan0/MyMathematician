@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,24 +21,22 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignUp extends AppCompatActivity {
-    private EditText email;
-    private EditText password;
-    private EditText con_password;
+    private EditText add_email;
+    private EditText add_password;
+    private EditText add_con_password;
 
     private Button sigh_up;
     FirebaseAuth mAuth;
 
-    @Override
-    public void onStart() {
+    public  void  onStart(){
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(SignUp.this,MainActivity.class);
+        if (currentUser != null){
+            Intent intent = new Intent(SignUp.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
     }
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +44,9 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         mAuth = FirebaseAuth.getInstance();
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        con_password = findViewById(R.id.con_password);
+        add_email = findViewById(R.id.email);
+        add_password = findViewById(R.id.password);
+        add_con_password = findViewById(R.id.con_password);
         sigh_up = findViewById(R.id.sigh_up);
 
 
@@ -55,43 +54,62 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                String add_email  = email.getText().toString();
-                String add_password = password.getText().toString();
-                String add_con_password = con_password.getText().toString();
+                String email  = add_email.getText().toString();
+                String password = add_password.getText().toString();
+                String con_password = add_con_password.getText().toString();
 
-                if (add_email.isEmpty() || add_password.isEmpty() || add_con_password.isEmpty() ) {
+
+
+                if (email.isEmpty() || password.isEmpty() || con_password.isEmpty() ) {
                     Toast.makeText(SignUp.this ,"Please enter all fields", Toast.LENGTH_SHORT).show();
                     return;
-                } else if (add_con_password != add_password) {
+                }
+                if (!password.equals(con_password)) {
                     Toast.makeText(SignUp.this ,"Password does not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if(password.length() < 8){
+                    Toast.makeText(SignUp.this ,"Password must be at least 8 characters long", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email.toLowerCase()).matches()){
+                    Toast.makeText(SignUp.this, "No valid email address", Toast.LENGTH_SHORT).show();
+                }
 
-                mAuth.createUserWithEmailAndPassword(add_email, add_password)
+                mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
-                                    Toast.makeText(SignUp.this, "Account created.",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(SignUp.this,MainActivity.class);
-                                    startActivity(intent);
+                                    // sendEmailVerification();
+                                    //Toast.makeText(SignUp.this, "Account created.\\n Please verify your email", Toast.LENGTH_SHORT).show();
+                                    //setContentView(R.layout.activity_verification);
+                                    startActivity(new Intent(SignUp.this, LogIn.class));
                                     finish();
 
                                 } else {
-                                    // If sign in fails, display a message to the user.
                                     Toast.makeText(SignUp.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
-
                                 }
                             }
-                        });
-
-
+                        } );
             }
         });
-
     }
-
 }
+/*private void sendEmailVerification() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null){
+            user.sendEmailVerification()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()){
+                            Toast.makeText(SignUp.this, "Account created.\\n Please verify your email", Toast.LENGTH_SHORT).show();
+                            setContentView(R.layout.activity_verification);
+                            startActivity(new Intent(SignUp.this, LogIn.class));
+                            finish();
+                        }else {
+                            Toast.makeText(SignUp.this, "Verification failed.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }*/

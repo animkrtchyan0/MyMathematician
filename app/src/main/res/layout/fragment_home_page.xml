@@ -23,11 +23,11 @@
             android:text="My Categories"
             android:textColor="@color/white"
             android:textSize="40dp"
+            android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textStyle="italic"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/frameLayout"
@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Arithmetic"
+                    android:text="Geometry"
                     android:textSize="33dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
@@ -128,25 +128,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Real Numbers"
-                    android:textSize="33dp"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/category6"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:gravity="center"
-                android:clickable="true">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Logarithmic "
                     android:textSize="33dp"
                     android:textColor="@color/black"
@@ -154,7 +135,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/category7"
+                android:id="@+id/category6"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:background="@drawable/categories_layout"

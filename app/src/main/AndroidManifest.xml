@@ -12,69 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMathematicianProject"
         tools:targetApi="31">
-
         <activity
-            android:name=".LevelPageTrig"
+            android:name=".Verification"
             android:exported="false" />
         <activity
-            android:name=".LevelPageDeriv"
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".LevelPageArithm"
+            android:name=".PageTrig"
             android:exported="false" />
         <activity
-            android:name=".LevelPageReal"
+            android:name=".PageDeriv"
             android:exported="false" />
         <activity
-            android:name=".LevelPageLog"
+            android:name=".PageGeom"
             android:exported="false" />
         <activity
-            android:name=".LevelPageFunc"
+            android:name=".PageLog"
             android:exported="false" />
         <activity
-            android:name=".LevelPageVar"
+            android:name=".PageFunc"
             android:exported="false" />
         <activity
-            android:name=".QuizArithm1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizArithm2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizDeriv1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizDeriv2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizFunc1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizFunc2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizLog1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizLog2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizReal1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizReal2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizTrig1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizTrig2"
-            android:exported="false" />
-        <activity
-            android:name=".QuizVar1"
-            android:exported="false" />
-        <activity
-            android:name=".QuizVar2"
+            android:name=".PageVar"
             android:exported="false" />
         <activity
             android:name=".ResultsActivity"

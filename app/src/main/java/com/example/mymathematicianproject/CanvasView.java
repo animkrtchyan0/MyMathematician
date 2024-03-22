@@ -4,54 +4,63 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import java.security.KeyStore;
 
 public class CanvasView extends View {
+    Paint paint;
 
-    private Paint paint;
-    private float startX, startY;
+    Path path;
     public CanvasView(Context context) {
         super(context);
+        init();
+    }
+
+
+    public CanvasView(Context context,@Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    private void init() {
         paint = new Paint();
         paint.setColor(Color.BLACK);
-
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(5);
+        paint.setStrokeWidth(7);
+        path =new Path();
+
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(@Nullable Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.WHITE);
+        canvas.drawPath(path, paint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
         float x = event.getX();
         float y = event.getY();
 
-        switch (event.getAction()) {
+        switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                startX = x;
-                startY = y;
+                path.moveTo(x,y);
                 break;
             case MotionEvent.ACTION_MOVE:
-                drawLine(startX, startY, x, y);
-                startX = x;
-                startY = y;
+                path.lineTo(x,y);
                 break;
             case MotionEvent.ACTION_UP:
                 break;
         }
         invalidate();
-        return true;
+        return  true;
     }
-        private void drawLine(float startX,float startY,float endX,float endY) {
-            Canvas canvas = new Canvas();
-            canvas.drawLine(startX,startY,endX,endY, paint);
-    }
+
 }
