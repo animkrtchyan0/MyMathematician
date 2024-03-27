@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ResultsActivity extends AppCompatActivity {
+
+    private TextView progress_perc;
 
     private Button back_btn;
 
@@ -15,6 +18,11 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+
+        int score = getIntent().getByteExtra("SCORE", (byte) 0);
+        progress_perc = findViewById(R.id.progress_perc);
+        progress_perc.setText(score);
+
 
         back_btn = findViewById(R.id.back_btn);
 

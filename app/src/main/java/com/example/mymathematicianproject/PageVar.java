@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,13 +21,17 @@ public class PageVar extends AppCompatActivity {
     private TextView questionTextView;
     private Button answer1Button, answer2Button, answer3Button, answer4Button;
     private Button nextButton;
-    private int questionNumber = 0;
-    QuestionDbHelper dbHelper;
+    private int score = 0;
+    private  SQLiteDatabase db;
+    private int questionNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_var);
+
+        QuestionDbHelper databaseHelper = new QuestionDbHelper(this);
+        db = databaseHelper.getReadableDatabase();
 
 
         questionTextView = findViewById(R.id.questionTextView);
@@ -36,80 +41,99 @@ public class PageVar extends AppCompatActivity {
         answer4Button = findViewById(R.id.answer4Button);
         nextButton = findViewById(R.id.nextButton);
 
-     /*   dbHelper = new QuestionDbHelper(this);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        displayQuestion();
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkAnswer();
-            }
-        });*/
+        loadQuestion();
     }
 
-   /* @SuppressLint("Range")
-    private void displayQuestion() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM questionsDeriv ORDER BY RANDOM() LIMIT 1", null);
-        if (cursor.moveToFirst()) {
+    @SuppressLint("Range")
+    private void loadQuestion() {
+        answer1Button.setBackgroundColor(Color.WHITE);
+        answer2Button.setBackgroundColor(Color.WHITE);
+        answer3Button.setBackgroundColor(Color.WHITE);
+        answer4Button.setBackgroundColor(Color.WHITE);
+
+        answer1Button.setEnabled(true);
+        answer2Button.setEnabled(true);
+        answer3Button.setEnabled(true);
+        answer4Button.setEnabled(true);
+
+        Cursor cursor = db.rawQuery("SELECT * FROM quizVar ORDER BY RANDOM() LIMIT 1",null);
+        if(cursor.moveToFirst()){
             String question = cursor.getString(cursor.getColumnIndex("question"));
             String answer1 = cursor.getString(cursor.getColumnIndex("answer1"));
             String answer2 = cursor.getString(cursor.getColumnIndex("answer2"));
             String answer3 = cursor.getString(cursor.getColumnIndex("answer3"));
             String answer4 = cursor.getString(cursor.getColumnIndex("answer4"));
+            int correctAnswer = cursor.getInt(cursor.getColumnIndex("correct_answer"));
 
             questionTextView.setText(question);
             answer1Button.setText(answer1);
             answer2Button.setText(answer2);
             answer3Button.setText(answer3);
             answer4Button.setText(answer4);
-        }
-        cursor.close();
+
+            answer1Button.setOnClickListener(v -> checkAnswer(1, correctAnswer));
+            answer2Button.setOnClickListener(v -> checkAnswer(2, correctAnswer));
+            answer3Button.setOnClickListener(v -> checkAnswer(3, correctAnswer));
+            answer4Button.setOnClickListener(v -> checkAnswer(4, correctAnswer));
+
+
+            questionNum ++;
+            if (questionNum < 8){
+                nextButton.setText("Next");
+                nextButton.setOnClickListener(v -> loadQuestion());
+            }else if(questionNum == 8){
+                nextButton.setOnClickListener(v -> loadQuestion());
+                nextButton.setText("Finish");
+            }else{
+                onDestroy();
+            }        }
     }
 
-    private  int score = 0;
-    @SuppressLint("Range")
-    private void checkAnswer() {
-        answer1Button = findViewById(R.id.answer1Button);
-        answer2Button = findViewById(R.id.answer2Button);
-        answer3Button = findViewById(R.id.answer3Button);
-        answer4Button = findViewById(R.id.answer4Button);
-
-        String selectedAnswer = "";
-        if (answer1Button.isSelected()){
-            selectedAnswer = answer1Button.getText().toString();
-        } else if (answer2Button.isSelected()) {
-            selectedAnswer = answer2Button.getText().toString();
-        }else if (answer3Button.isSelected()) {
-            selectedAnswer = answer3Button.getText().toString();
-        }else if (answer4Button.isSelected()) {
-            selectedAnswer = answer4Button.getText().toString();
-        }
-
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT correct_answer FROM questionsDeriv  LIMIT 1 OFFSET " + questionNumber, null);
-        if (cursor.moveToFirst()){
-            String correctAnswer = cursor.getString(cursor.getColumnIndex("correct_answer"));
-
-            if (selectedAnswer.equals(correctAnswer)){
-                score ++;
+    private void checkAnswer(int selectedAnswer, int correctAnswer) {
+        if (selectedAnswer == correctAnswer){
+            switch (selectedAnswer){
+                case 1:
+                    answer1Button.setBackgroundColor(Color.GREEN);
+                    break;
+                case 2:
+                    answer2Button.setBackgroundColor(Color.GREEN);
+                    break;
+                case 3:
+                    answer3Button.setBackgroundColor(Color.GREEN);
+                    break;
+                case 4:
+                    answer4Button.setBackgroundColor(Color.GREEN);
+                    break;
             }
-        }
-        cursor.close();
-
-
-        if (questionNumber<7){
-            questionNumber ++;
-            displayQuestion();
-            if (questionNumber == 7) {
-                nextButton.setText("Finish");
-            }
+            score++;
         }else {
-            Intent intent = new Intent(PageVar.this, ResultsActivity.class);
-            startActivity(intent);
-            finish();
+            switch (selectedAnswer){
+                case 1:
+                    answer1Button.setBackgroundColor(Color.RED);
+                    break;
+                case 2:
+                    answer2Button.setBackgroundColor(Color.RED);
+                    break;
+                case 3:
+                    answer3Button.setBackgroundColor(Color.RED);
+                    break;
+                case 4:
+                    answer4Button.setBackgroundColor(Color.RED);
+                    break;
+            }
         }
-    }*/
+        answer1Button.setEnabled(false);
+        answer2Button.setEnabled(false);
+        answer3Button.setEnabled(false);
+        answer4Button.setEnabled(false);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
+        Intent intent = new Intent(this, ResultsActivity.class);
+        intent.putExtra("SCORE", score);
+        startActivity(intent);
+    }
 }
