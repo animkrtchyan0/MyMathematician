@@ -16,9 +16,6 @@
             android:name=".Verification"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".PageTrig"
             android:exported="false" />
         <activity

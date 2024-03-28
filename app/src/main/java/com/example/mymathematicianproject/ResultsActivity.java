@@ -19,9 +19,12 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        int score = getIntent().getByteExtra("SCORE", (byte) 0);
+        Intent intent = getIntent();
+        int score = intent.getIntExtra("SCORE", 0);
+        float scores = (float) (score * 12.5);
+        String scoreSting = Float.toString(scores);
         progress_perc = findViewById(R.id.progress_perc);
-        progress_perc.setText(score);
+        progress_perc.setText(scoreSting);
 
 
         back_btn = findViewById(R.id.back_btn);
