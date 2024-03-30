@@ -6,12 +6,15 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +27,9 @@ public class PageDeriv extends AppCompatActivity {
     private int score = 0;
     private  SQLiteDatabase db;
     private int questionNum = 0;
+    BottomNavigationView bottomClean;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,10 @@ public class PageDeriv extends AppCompatActivity {
 
         loadQuestion();
 
+
+        bottomClean = findViewById(R.id.clean);
+
+
     }
     @SuppressLint("Range")
     private void loadQuestion() {
@@ -57,7 +66,7 @@ public class PageDeriv extends AppCompatActivity {
 
         Cursor cursor = db.rawQuery("SELECT * FROM quizDeriv ORDER BY RANDOM() LIMIT 1",null);
         if(cursor.moveToFirst()){
-             String question = cursor.getString(cursor.getColumnIndex("question"));
+            String question = cursor.getString(cursor.getColumnIndex("question"));
             String answer1 = cursor.getString(cursor.getColumnIndex("answer1"));
             String answer2 = cursor.getString(cursor.getColumnIndex("answer2"));
             String answer3 = cursor.getString(cursor.getColumnIndex("answer3"));
@@ -79,6 +88,7 @@ public class PageDeriv extends AppCompatActivity {
             if (questionNum < 8){
                 nextButton.setText("Next");
                 nextButton.setOnClickListener(v -> loadQuestion());
+
             }else if(questionNum == 8){
                 nextButton.setOnClickListener(v -> loadQuestion());
                 nextButton.setText("Finish");

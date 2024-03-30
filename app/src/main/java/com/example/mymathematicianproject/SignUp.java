@@ -77,39 +77,25 @@ public class SignUp extends AppCompatActivity {
                 }
 
                 mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+                        .addOnCompleteListener(task ->   {
                                 if (task.isSuccessful()) {
-                                    // sendEmailVerification();
-                                    //Toast.makeText(SignUp.this, "Account created.\\n Please verify your email", Toast.LENGTH_SHORT).show();
-                                    //setContentView(R.layout.activity_verification);
-                                    startActivity(new Intent(SignUp.this, LogIn.class));
-                                    finish();
-
+                                    mAuth.getCurrentUser().sendEmailVerification()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                   if (task.isSuccessful()){
+                                                       Toast.makeText(SignUp.this, "Registration succeed.Please verify your email.", Toast.LENGTH_SHORT).show();
+                                                   }else {
+                                                       Toast.makeText(SignUp.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                                   }
+                                                }
+                                            });
                                 } else {
-                                    Toast.makeText(SignUp.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUp.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
-                            }
+
                         } );
             }
         });
     }
 }
-/*private void sendEmailVerification() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null){
-            user.sendEmailVerification()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()){
-                            Toast.makeText(SignUp.this, "Account created.\\n Please verify your email", Toast.LENGTH_SHORT).show();
-                            setContentView(R.layout.activity_verification);
-                            startActivity(new Intent(SignUp.this, LogIn.class));
-                            finish();
-                        }else {
-                            Toast.makeText(SignUp.this, "Verification failed.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
-    }*/

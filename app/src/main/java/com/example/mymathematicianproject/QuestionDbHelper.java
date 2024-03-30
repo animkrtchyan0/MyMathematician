@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class QuestionDbHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "quiz_database";
+    private static final String DATABASE_NAME = "quiz_db";
     private static final int DATABASE_VERSION = 1;
 
     public QuestionDbHelper(Context context) {

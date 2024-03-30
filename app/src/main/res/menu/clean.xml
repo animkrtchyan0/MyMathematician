@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title=""
-        android:icon="@drawable/baseline_dehaze_24"
+        android:icon="@drawable/baseline_restore_page_24"
         android:id="@+id/more_details"/>
 </menu>

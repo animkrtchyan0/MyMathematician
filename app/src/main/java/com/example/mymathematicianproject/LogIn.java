@@ -57,27 +57,21 @@ public class LogIn extends AppCompatActivity {
                     return;
                 }
                 mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+                        .addOnCompleteListener(task ->  {
                                 if (task.isSuccessful()) {
-                                    Intent intent = new Intent(LogIn.this,MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                    /* if (mAuth.getCurrentUser().isEmailVerified()){
+                                     if (mAuth.getCurrentUser().isEmailVerified()){
                                         Intent intent = new Intent(LogIn.this,MainActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }else {
                                         Toast.makeText(LogIn.this, "Please verify your email.",
                                                 Toast.LENGTH_SHORT).show();
-                                    }*/
+                                    }
                                 } else {
                                     Toast.makeText(LogIn.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
-                            }
-                        } );
+                        });
             }
         });
 
