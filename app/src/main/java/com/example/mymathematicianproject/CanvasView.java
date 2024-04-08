@@ -36,6 +36,7 @@ public class CanvasView extends View {
         paint.setStrokeWidth(7);
         path =new Path();
 
+
     }
 
     @Override

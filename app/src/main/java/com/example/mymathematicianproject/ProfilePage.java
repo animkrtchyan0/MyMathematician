@@ -82,6 +82,7 @@ public class ProfilePage extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(),LogIn.class);
+                getActivity().finish();
                 startActivity(intent);
 
             }
@@ -95,6 +96,7 @@ public class ProfilePage extends Fragment {
                 Objects.requireNonNull(auth.getCurrentUser()).delete();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(),LogIn.class);
+                getActivity().finish();
                 startActivity(intent);
             }
         });

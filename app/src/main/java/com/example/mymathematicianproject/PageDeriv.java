@@ -8,13 +8,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,7 +30,7 @@ public class PageDeriv extends AppCompatActivity {
     private int score = 0;
     private  SQLiteDatabase db;
     private int questionNum = 0;
-    BottomNavigationView bottomClean;
+    BottomNavigationView buttonClean;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -48,7 +51,16 @@ public class PageDeriv extends AppCompatActivity {
         loadQuestion();
 
 
-        bottomClean = findViewById(R.id.clean);
+        buttonClean = findViewById(R.id.clean);
+        final CanvasView canvasView = new CanvasView(this);
+        buttonClean.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                if (item.getItemId()== R.id.clean){
+                }
+                return false;
+            }
+        });
 
 
     }
@@ -87,7 +99,14 @@ public class PageDeriv extends AppCompatActivity {
             questionNum ++;
             if (questionNum < 8){
                 nextButton.setText("Next");
-                nextButton.setOnClickListener(v -> loadQuestion());
+                final  CanvasView canvasView = new CanvasView(this);
+
+                nextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loadQuestion();
+                    }
+                });
 
             }else if(questionNum == 8){
                 nextButton.setOnClickListener(v -> loadQuestion());
