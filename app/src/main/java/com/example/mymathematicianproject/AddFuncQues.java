@@ -41,6 +41,15 @@ public class AddFuncQues extends AppCompatActivity {
                 String answer4 = AddAnswer4.getText().toString();
                 String correct = correctAns.getText().toString();
                 int correctNum = Integer.parseInt(correct);
+                String category = "Func";
+
+                DataHolder.category = category;
+                DataHolder.question = question;
+                DataHolder.answer1 = answer1;
+                DataHolder.answer2 = answer2;
+                DataHolder.answer3 = answer3;
+                DataHolder.answer4 = answer4;
+                DataHolder.correctNum = correctNum;
 
 
             }

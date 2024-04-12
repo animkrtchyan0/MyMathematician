@@ -41,6 +41,15 @@ public class AddLogQues extends AppCompatActivity {
                 String correct = correctAns.getText().toString();
                 int correctNum = Integer.parseInt(correct);
 
+                String category = "Log";
+
+                DataHolder.category = category;
+                DataHolder.question = question;
+                DataHolder.answer1 = answer1;
+                DataHolder.answer2 = answer2;
+                DataHolder.answer3 = answer3;
+                DataHolder.answer4 = answer4;
+                DataHolder.correctNum = correctNum;
 
             }
         });
