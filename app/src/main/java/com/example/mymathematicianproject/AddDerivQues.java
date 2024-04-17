@@ -46,39 +46,6 @@ public class AddDerivQues extends AppCompatActivity {
         correctAns = findViewById(R.id.myCorrectAns);
         sendRequest = findViewById(R.id.sendRequest);
 
-        sendRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String question = newQuestion.getText().toString();
-                String answer1 = AddAnswer1.getText().toString();
-                String answer2 = AddAnswer2.getText().toString();
-                String answer3 = AddAnswer3.getText().toString();
-                String answer4 = AddAnswer4.getText().toString();
-                String correct = correctAns.getText().toString();
-                int correctNum = Integer.parseInt(correct);
-                String category = "Deriv";
-
-                DataHolder.category = category;
-                DataHolder.question = question;
-                DataHolder.answer1 = answer1;
-                DataHolder.answer2 = answer2;
-                DataHolder.answer3 = answer3;
-                DataHolder.answer4 = answer4;
-                DataHolder.correctNum = correctNum;
-
-
-                SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-                String adminToken = prefs.getString("admin_token", "");
-                if (! adminToken.isEmpty()) {
-                    FirebaseMessaging.getInstance().send(new RemoteMessage.Builder("adminToken")
-                            .setMessageId(Integer.toString(new Random().nextInt(9999)))
-                            .setData(new HashMap<String, String>() {{
-                                put("message", "User clicked on the button");
-                            }})
-                            .build());
-                }
-            }
-        });
 
     }
 }

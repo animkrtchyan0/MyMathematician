@@ -16,12 +16,20 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class PageDeriv extends AppCompatActivity {
     private TextView questionTextView;
@@ -30,7 +38,7 @@ public class PageDeriv extends AppCompatActivity {
     private int score = 0;
     private  SQLiteDatabase db;
     private int questionNum = 0;
-    BottomNavigationView buttonClean;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,8 +46,6 @@ public class PageDeriv extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_deriv);
 
-        QuestionDbHelper databaseHelper = new QuestionDbHelper(this);
-        db = databaseHelper.getReadableDatabase();
 
         questionTextView = findViewById(R.id.questionTextView);
         answer1Button = findViewById(R.id.answer1Button);
@@ -48,22 +54,12 @@ public class PageDeriv extends AppCompatActivity {
         answer4Button = findViewById(R.id.answer4Button);
         nextButton = findViewById(R.id.nextButton);
 
+        QuestionDbHelper databaseHelper = new QuestionDbHelper(this);
+        db = databaseHelper.getReadableDatabase();
+
         loadQuestion();
-
-
-        buttonClean = findViewById(R.id.clean);
-        final CanvasView canvasView = new CanvasView(this);
-        buttonClean.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                if (item.getItemId()== R.id.clean){
-                }
-                return false;
-            }
-        });
-
-
     }
+
     @SuppressLint("Range")
     private void loadQuestion() {
         answer1Button.setBackgroundColor(Color.WHITE);
@@ -96,18 +92,11 @@ public class PageDeriv extends AppCompatActivity {
             answer3Button.setOnClickListener(v -> checkAnswer(3, correctAnswer));
             answer4Button.setOnClickListener(v -> checkAnswer(4, correctAnswer));
 
+
             questionNum ++;
             if (questionNum < 8){
                 nextButton.setText("Next");
-                final  CanvasView canvasView = new CanvasView(this);
-
-                nextButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        loadQuestion();
-                    }
-                });
-
+                nextButton.setOnClickListener(v -> loadQuestion());
             }else if(questionNum == 8){
                 nextButton.setOnClickListener(v -> loadQuestion());
                 nextButton.setText("Finish");
@@ -150,7 +139,6 @@ public class PageDeriv extends AppCompatActivity {
                     break;
             }
         }
-
         answer1Button.setEnabled(false);
         answer2Button.setEnabled(false);
         answer3Button.setEnabled(false);
@@ -161,8 +149,8 @@ public class PageDeriv extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         db.close();
-         Intent intent = new Intent(this, ResultsActivity.class);
-         intent.putExtra("SCORE", score);
-         startActivity(intent);
+        Intent intent = new Intent(this, ResultsActivity.class);
+        intent.putExtra("SCORE", score);
+        startActivity(intent);
     }
 }

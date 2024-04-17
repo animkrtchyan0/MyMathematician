@@ -29,29 +29,5 @@ public class AddLogQues extends AppCompatActivity {
         AddAnswer4 = findViewById(R.id.myAns4);
         correctAns = findViewById(R.id.myCorrectAns);
         sendRequest = findViewById(R.id.sendRequest);
-
-        sendRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String question = newQuestion.getText().toString();
-                String answer1 = AddAnswer1.getText().toString();
-                String answer2 = AddAnswer2.getText().toString();
-                String answer3 = AddAnswer3.getText().toString();
-                String answer4 = AddAnswer4.getText().toString();
-                String correct = correctAns.getText().toString();
-                int correctNum = Integer.parseInt(correct);
-
-                String category = "Log";
-
-                DataHolder.category = category;
-                DataHolder.question = question;
-                DataHolder.answer1 = answer1;
-                DataHolder.answer2 = answer2;
-                DataHolder.answer3 = answer3;
-                DataHolder.answer4 = answer4;
-                DataHolder.correctNum = correctNum;
-
-            }
-        });
     }
 }

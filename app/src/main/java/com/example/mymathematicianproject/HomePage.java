@@ -83,6 +83,7 @@ public class HomePage extends Fragment {
             }
         });
 
+
         return view;
     }
 }
