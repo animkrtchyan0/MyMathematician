@@ -32,7 +32,8 @@ public class HomePage extends Fragment {
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageVar.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Variables");
                 startActivity(intent);
             }
         });
@@ -41,7 +42,8 @@ public class HomePage extends Fragment {
         layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageFunc.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Functions");
                 startActivity(intent);
             }
         });
@@ -50,7 +52,8 @@ public class HomePage extends Fragment {
         layout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageTrig.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Trigonometry");
                 startActivity(intent);
             }
         });
@@ -59,7 +62,8 @@ public class HomePage extends Fragment {
         layout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageGeom.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Geometry");
                 startActivity(intent);
             }
         });
@@ -69,7 +73,8 @@ public class HomePage extends Fragment {
         layout5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageLog.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Logarithmic");
                 startActivity(intent);
             }
         });
@@ -78,7 +83,8 @@ public class HomePage extends Fragment {
         layout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PageDeriv.class);
+                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                intent.putExtra("TOPIC", "Derivatives");
                 startActivity(intent);
             }
         });

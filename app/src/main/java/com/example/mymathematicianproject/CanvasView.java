@@ -8,23 +8,21 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Switch;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.security.KeyStore;
 
 public class CanvasView extends View {
     Paint paint;
 
     Path path;
+
     public CanvasView(Context context) {
         super(context);
         init();
     }
 
 
-    public CanvasView(Context context,@Nullable AttributeSet attrs) {
+    public CanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -34,9 +32,7 @@ public class CanvasView extends View {
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(7);
-        path =new Path();
-
-
+        path = new Path();
     }
 
     @Override
@@ -50,18 +46,22 @@ public class CanvasView extends View {
         float x = event.getX();
         float y = event.getY();
 
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(x,y);
+                path.moveTo(x, y);
                 break;
             case MotionEvent.ACTION_MOVE:
-                path.lineTo(x,y);
+                path.lineTo(x, y);
                 break;
             case MotionEvent.ACTION_UP:
                 break;
         }
         invalidate();
-        return  true;
+        return true;
     }
 
+    public void clearCanvas() {
+        path.reset();
+        invalidate();
+    }
 }

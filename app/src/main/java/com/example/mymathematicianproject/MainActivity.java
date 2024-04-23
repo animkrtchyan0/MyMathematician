@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,addQuesPage).commit();
                 }
 
+                item.setChecked(true);
                 return false;
             }
         });

@@ -11,42 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMathematicianProject"
+        android:name=".App"
         tools:targetApi="31">
         <activity
-            android:name=".AddVarQues"
+            android:name=".AddQuestion"
             android:exported="false" />
         <activity
-            android:name=".AddTrigQues"
-            android:exported="false" />
-        <activity
-            android:name=".AddLogQues"
-            android:exported="false" />
-        <activity
-            android:name=".AddGeomQues"
-            android:exported="false" />
-        <activity
-            android:name=".AddFuncQues"
-            android:exported="false" />
-        <activity
-            android:name=".AddDerivQues"
-            android:exported="false" />
-        <activity
-            android:name=".PageTrig"
-            android:exported="false" />
-        <activity
-            android:name=".PageDeriv"
-            android:exported="false" />
-        <activity
-            android:name=".PageGeom"
-            android:exported="false" />
-        <activity
-            android:name=".PageLog"
-            android:exported="false" />
-        <activity
-            android:name=".PageFunc"
-            android:exported="false" />
-        <activity
-            android:name=".PageVar"
+            android:name=".QuestionPage"
             android:exported="false" />
         <activity
             android:name=".ResultsActivity"

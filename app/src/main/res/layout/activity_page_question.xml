@@ -2,70 +2,74 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PageLog"
-    android:orientation="vertical"
     android:background="@color/dark_piruz"
+    android:orientation="vertical"
     android:padding="30dp"
-    android:id="@+id/quiz_page">
+    tools:context=".QuestionPage">
 
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="question"
-        android:textSize="20dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/quiz_shape"
         android:padding="13dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
+        android:text="question"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/answer1Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/trans_white"
         android:text="answer1"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:backgroundTint="@color/trans_white"
-        android:layout_marginTop="20dp"/>
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/answer2Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/trans_white"
         android:text="answer2"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:backgroundTint="@color/trans_white"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/answer3Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/trans_white"
         android:text="answer3"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:backgroundTint="@color/trans_white"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/answer4Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/trans_white"
         android:text="answer4"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:backgroundTint="@color/trans_white"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark_blue"
         android:text="Next"
         android:textColor="@color/white"
-        android:textSize="23dp"
-        android:backgroundTint="@color/dark_blue"
-        android:layout_marginTop="10dp"/>
+        android:textSize="23dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,31 +77,33 @@
         android:layout_marginTop="10dp"
         android:text="My notes"
         android:textColor="@color/black"
-        android:textSize="16.5dp"/>
+        android:textSize="16.5dp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+
+    <!-- canvas_view_layout.xml -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <com.example.mymathematicianproject.CanvasView
             android:id="@+id/canvas_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@color/white" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/clean"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+        <Button
+            android:id="@+id/clean_button"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/clean" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="160dp"
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@drawable/baseline_restore_page_24" />
+
+    </RelativeLayout>
+
 </LinearLayout>
