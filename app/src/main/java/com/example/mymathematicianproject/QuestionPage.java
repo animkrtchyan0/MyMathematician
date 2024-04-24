@@ -92,7 +92,7 @@ public class QuestionPage extends AppCompatActivity {
                         String answer4 = randomDocument.getString("answer4");
                         int correctAnswer = randomDocument.getLong("correctAnswer").intValue();
 
-                        questionTextView.setText(questionNum + 1 + ") " + question);
+                        questionTextView.setText(/*questionNum + 1 + ") " +*/ question);
                         answer1Button.setText(answer1);
                         answer2Button.setText(answer2);
                         answer3Button.setText(answer3);
