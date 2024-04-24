@@ -24,7 +24,7 @@
     <Button
         android:id="@+id/answer1Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/trans_white"
         android:text="answer1"
@@ -34,7 +34,7 @@
     <Button
         android:id="@+id/answer2Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/trans_white"
         android:text="answer2"
@@ -44,7 +44,7 @@
     <Button
         android:id="@+id/answer3Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/trans_white"
         android:text="answer3"
@@ -54,7 +54,7 @@
     <Button
         android:id="@+id/answer4Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/trans_white"
         android:text="answer4"
@@ -94,14 +94,9 @@
         <Button
             android:id="@+id/clean_button"
             android:layout_width="46dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="160dp"
-
             android:background="@drawable/baseline_restore_page_24" />
 
     </RelativeLayout>

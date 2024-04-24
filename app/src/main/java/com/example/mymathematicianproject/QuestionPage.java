@@ -121,7 +121,9 @@ public class QuestionPage extends AppCompatActivity {
         addColorToAnswer(selectedAnswer, Color.RED);
         addColorToAnswer(correctAnswer, Color.GREEN);
 
-        score++;
+        if (selectedAnswer == correctAnswer){
+            score++;
+        }
         answer1Button.setEnabled(false);
         answer2Button.setEnabled(false);
         answer3Button.setEnabled(false);

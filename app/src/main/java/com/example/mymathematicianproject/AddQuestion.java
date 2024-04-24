@@ -24,6 +24,7 @@ import java.util.Map;
 
 public class AddQuestion extends AppCompatActivity {
     private static final String TAG = "AddVarQues";
+    private Button cancel;
 
     private EditText newQuestion;
     private EditText AddAnswer1;
@@ -44,17 +45,27 @@ public class AddQuestion extends AppCompatActivity {
         AddAnswer3 = findViewById(R.id.myAns3);
         AddAnswer4 = findViewById(R.id.myAns4);
         correctAns = findViewById(R.id.myCorrectAns);
+        cancel = findViewById(R.id.CancelRequest);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddQuestion.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         TextView textView = findViewById(R.id.textView2);
         Intent intent = getIntent();
         String topic = intent.getStringExtra("TOPIC");
         textView.setText(topic);
 
-        Button sendRequest = findViewById(R.id.sendRequest);
+        Button addQues = findViewById(R.id.sendRequest);
 
         db = FirebaseFirestore.getInstance();
 
-        sendRequest.setOnClickListener(new View.OnClickListener() {
+        addQues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isValidQuestion()) {
@@ -94,8 +105,25 @@ public class AddQuestion extends AppCompatActivity {
         });
     }
 
-    //Todo correct validation
     private boolean isValidQuestion() {
+
+        String question = newQuestion.getText().toString();
+        String ans1 = AddAnswer1.getText().toString();
+        String ans2 = AddAnswer2.getText().toString();
+        String ans3 = AddAnswer3.getText().toString();
+        String ans4 = AddAnswer4.getText().toString();
+        int number = Integer.valueOf(correctAns.getText().toString());
+
+        if(ans1.isEmpty() || ans2.isEmpty() || ans3.isEmpty() || ans4.isEmpty() || question.isEmpty()){
+            Toast.makeText(AddQuestion.this, "Please enter all fields",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (number != 1 || number != 2 || number != 3 || number != 4){
+            Toast.makeText(AddQuestion.this, "Please choose the number between 1-4",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
         return true;
     }
 }
