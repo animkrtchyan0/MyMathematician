@@ -93,9 +93,7 @@ public class ProfilePage extends Fragment {
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Objects.requireNonNull(auth.getCurrentUser()).delete();
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getActivity(),LogIn.class);
+                Intent intent = new Intent(getActivity(),DeleteAccepting.class);
                 getActivity().finish();
                 startActivity(intent);
             }

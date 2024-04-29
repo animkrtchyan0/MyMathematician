@@ -112,15 +112,15 @@ public class AddQuestion extends AppCompatActivity {
         String ans2 = AddAnswer2.getText().toString();
         String ans3 = AddAnswer3.getText().toString();
         String ans4 = AddAnswer4.getText().toString();
-        int number = Integer.valueOf(correctAns.getText().toString());
         String num = correctAns.getText().toString();
+        int number = Integer.parseInt(num);
 
         if(ans1.isEmpty() || ans2.isEmpty() || ans3.isEmpty() || ans4.isEmpty() || question.isEmpty() || num.isEmpty()){
             Toast.makeText(AddQuestion.this, "Please enter all fields",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (number != 1 || number != 2 || number != 3 || number != 4){
+        if (number != 1 && number != 2 && number != 3 && number != 4){
             Toast.makeText(AddQuestion.this, "Please choose a number between 1-4",
                     Toast.LENGTH_SHORT).show();
             return false;
