@@ -12,9 +12,9 @@
 
     <LinearLayout
         android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_height="280dp"
         android:orientation="vertical"
-        android:background="#E3E2E2"
+        android:background="@drawable/delete"
         android:layout_gravity="center"
         android:gravity="center">
 
@@ -40,7 +40,8 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 android:backgroundTint="#E84343"
-                android:layout_margin="15dp"/>
+                android:layout_margin="15dp"
+                android:shadowColor="@color/grey"/>
 
             <Button
                 android:id="@+id/no"

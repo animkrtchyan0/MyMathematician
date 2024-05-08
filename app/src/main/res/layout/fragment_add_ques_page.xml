@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView2"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints"
-    tools:context=".AddQuesPage"
-    android:background="@color/white">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_blue">
+        android:layout_height="match_parent"
+        android:background="@color/dark_blue"
+        tools:ignore="MissingConstraints"
+        tools:context=".AddQuesPage">
 
         <!-- TODO: Update blank fragment layout -->
 
@@ -32,13 +26,13 @@
         <LinearLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="105dp"
             android:background="@drawable/base_layout"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="58dp"
             android:orientation="vertical"
-            android:padding="30dp"
+            android:padding="20dp"
             android:gravity="center">
 
             <TextView
@@ -46,121 +40,138 @@
                 android:layout_height="wrap_content"
                 android:text="Choose the category"
                 android:textColor="@color/black"
-                android:textSize="30dp"/>
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textStyle="bold"/>
 
             <LinearLayout
-                android:id="@+id/category1"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:background="@drawable/categories_layout"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:gravity="center"
-                android:clickable="true">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Variables"
-                    android:textSize="33dp"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <LinearLayout
+                    android:id="@+id/category1"
+                    android:layout_width="180dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/categories_layout"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:clickable="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Variables"
+                        android:textSize="30dp"
+                        android:textColor="@color/black"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category2"
+                    android:layout_width="180dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/categories_layout"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center"
+                    android:clickable="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Functions"
+                        android:textSize="30dp"
+                        android:textColor="@color/black"
+                        android:textStyle="italic"/>
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/category2"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:gravity="center"
-                android:clickable="true">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Functions"
-                    android:textSize="33dp"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"/>
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
             <LinearLayout
                 android:id="@+id/category3"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
                 android:gravity="center"
                 android:clickable="true">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Trigonometry"
-                    android:textSize="33dp"
+                    android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/category4"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
                 android:gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Geometry"
-                    android:textSize="33dp"
+                    android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
             <LinearLayout
                 android:id="@+id/category5"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
                 android:gravity="center"
                 android:clickable="true">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Logarithmic "
-                    android:textSize="33dp"
+                    android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/category6"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/categories_layout"
-                android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
                 android:gravity="center"
                 android:clickable="true">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Derivatives"
-                    android:textSize="33dp"
+                    android:textSize="30dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
+        </LinearLayout>
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
