@@ -53,8 +53,6 @@ public class QuestionPage extends AppCompatActivity {
         cleanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle button click here
-                // For example, you can call a method to clear the canvas
                 canvasView.clearCanvas();
             }
         });

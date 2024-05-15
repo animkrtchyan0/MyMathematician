@@ -33,7 +33,7 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="105dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/base_layout"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="58dp"
@@ -43,7 +43,7 @@
             <LinearLayout
                 android:id="@+id/category1"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="0dp"
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Variables"
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
@@ -62,7 +62,7 @@
             <LinearLayout
                 android:id="@+id/category2"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Functions"
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
@@ -81,7 +81,7 @@
             <LinearLayout
                 android:id="@+id/category3"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Trigonometry"
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
@@ -100,7 +100,7 @@
             <LinearLayout
                 android:id="@+id/category4"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Geometry"
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
@@ -118,7 +118,7 @@
             <LinearLayout
                 android:id="@+id/category5"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Logarithmic "
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>
@@ -137,7 +137,7 @@
             <LinearLayout
                 android:id="@+id/category6"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -148,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Derivatives"
-                    android:textSize="33dp"
+                    android:textSize="35dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"/>
             </LinearLayout>

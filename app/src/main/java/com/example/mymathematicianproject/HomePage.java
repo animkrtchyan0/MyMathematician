@@ -1,10 +1,13 @@
 package com.example.mymathematicianproject;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +16,7 @@ import android.widget.LinearLayout;
 public class HomePage extends Fragment {
 
     public HomePage() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -25,14 +28,14 @@ public class HomePage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
 
         LinearLayout layout1 = view.findViewById(R.id.category1);
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Variables");
                 startActivity(intent);
             }
@@ -42,7 +45,7 @@ public class HomePage extends Fragment {
         layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Functions");
                 startActivity(intent);
             }
@@ -52,7 +55,7 @@ public class HomePage extends Fragment {
         layout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Trigonometry");
                 startActivity(intent);
             }
@@ -62,7 +65,7 @@ public class HomePage extends Fragment {
         layout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Geometry");
                 startActivity(intent);
             }
@@ -73,7 +76,7 @@ public class HomePage extends Fragment {
         layout5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Logarithmic");
                 startActivity(intent);
             }
@@ -83,7 +86,7 @@ public class HomePage extends Fragment {
         layout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionPage.class);
+                Intent intent = new Intent(getActivity(), GameStartPage.class);
                 intent.putExtra("TOPIC", "Derivatives");
                 startActivity(intent);
             }
