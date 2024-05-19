@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="My Categories"
             android:textColor="@color/white"
-            android:textSize="40dp"
+            android:textSize="45dp"
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             <LinearLayout
                 android:id="@+id/category1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="0dp"
@@ -62,7 +62,7 @@
             <LinearLayout
                 android:id="@+id/category2"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -81,7 +81,7 @@
             <LinearLayout
                 android:id="@+id/category3"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -100,7 +100,7 @@
             <LinearLayout
                 android:id="@+id/category4"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -118,7 +118,7 @@
             <LinearLayout
                 android:id="@+id/category5"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"
@@ -137,7 +137,7 @@
             <LinearLayout
                 android:id="@+id/category6"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:background="@drawable/categories_layout"
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="0dp"

@@ -105,11 +105,14 @@ public class QuestionPage extends AppCompatActivity {
                         if (questionNum < 8) {
                             nextButton.setText("Next");
                             nextButton.setOnClickListener(v -> loadQuestion());
-                        } else if (questionNum == 8) {
-                            nextButton.setOnClickListener(v -> loadQuestion());
+                        } else if(questionNum == 8){
                             nextButton.setText("Finish");
-                        } else {
-                            onDestroy();
+                            nextButton.setOnClickListener(v -> {
+                                Intent intent = new Intent(QuestionPage.this, ResultsActivity.class);
+                                intent.putExtra("SCORE", score);
+                                startActivity(intent);
+                                finish();
+                            });
                         }
                     }
                 });
@@ -143,13 +146,5 @@ public class QuestionPage extends AppCompatActivity {
                 answer4Button.setBackgroundColor(color);
                 break;
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Intent intent = new Intent(this, ResultsActivity.class);
-        intent.putExtra("SCORE", score);
-        startActivity(intent);
     }
 }
