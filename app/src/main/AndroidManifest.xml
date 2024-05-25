@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MyMathematicianProject"
         tools:targetApi="31">
         <activity
+            android:name=".TestMode"
+            android:exported="false" />
+        <activity
             android:name=".GameStartPage"
             android:exported="false" />
         <activity

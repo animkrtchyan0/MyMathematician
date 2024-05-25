@@ -22,7 +22,7 @@ public class LogIn extends AppCompatActivity {
     private EditText add_password;
     private Button log_in_button;
     FirebaseAuth mAuth;
-    Button button;
+    Button button,buttonMode;
 
     @Override
     public void onStart() {
@@ -83,5 +83,29 @@ public class LogIn extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buttonMode = findViewById(R.id.testmode_button);
+        buttonMode.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                signIn("sictst1@gmail.com", "Samsung2023");
+            }
+        });
+    }
+    private void signIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        Intent intent = new Intent(LogIn.this,MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                        Toast.makeText(LogIn.this, "Automatic login succeeded.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LogIn.this, "Authentication Failed.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
